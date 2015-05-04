@@ -24,8 +24,10 @@ function Stream() {
 Stream.prototype = Object.create(Writable.prototype)
 
 Stream.prototype._write = function (chunk, enc, next) {
-  this._length += chunk.length
-  this._chunks.push(chunk)
+  if (chunk) {
+    this._length += chunk.length
+    this._chunks.push(chunk)
+  }
   next()
 }
 
