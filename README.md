@@ -2,8 +2,8 @@
 
 Simple and dependency-free node/io.js module to transform a function into a pipeable stream
 
-pipefy returns a unique buffer as result of contatenating each chunks of the readable input stream.
-This is usually enough for most cases, but for large amounts of data it may have negative performance side-effects.
+pipefy returns a unique buffer as result of contatenating each chunk emitted by the readable input stream.
+This is usually enough for most cases, but for large amounts of data handling huge buffers may have negative performance side-effects.
 
 ## Installation
 
