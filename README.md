@@ -1,7 +1,9 @@
 # pipefy [![Build Status](https://travis-ci.org/h2non/pipefy.svg?branch=master)](https://travis-ci.org/h2non/pipefy)
 
-Simple and dependency-free node/io.js module to transform a function 
-into a pipeable stream, ending with a buffer of chunks
+Simple and dependency-free node/io.js module to transform a function into a pipeable stream
+
+pipefy returns a unique buffer as result of contatenating each chunks of the readable input stream.
+This is usually enough for most cases, but for large amounts of data it may have negative performance side-effects.
 
 ## Installation
 
@@ -49,6 +51,8 @@ You can subscribe to stream events to deal with the status. E.g: `error`, `finis
 #### pipefy.Stream()
 
 Writable stream implementation used internally by `pipefy`
+
+See the [implementation](https://github.com/h2non/pipefy/blob/master/index.js#L18) for hacking purposes
 
 ## License
 
