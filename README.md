@@ -1,6 +1,7 @@
 # pipefy [![Build Status](https://travis-ci.org/h2non/pipefy.svg?branch=master)](https://travis-ci.org/h2non/pipefy)
 
-Simple and dependency-free node/io.js module to transform a function into a pipeable stream
+Simple and dependency-free node/io.js module to transform a function 
+into a pipeable stream, ending with a buffer of chunks
 
 ## Installation
 
@@ -17,23 +18,24 @@ var pipefy = require('pipefy')
 
 Instead of doing this (note that I've used the sync API for simplification):
 ```js
-function save(buf, path) {
+function process(buf, path) {
   // mad science here...
   fs.writeFileSync(path, buf)
 }
 
 var data = fs.readFileSync('image.jpg')
-save(data, 'new.jpg')
+process(data, 'new.jpg')
 ```
 
 With `pipefy` you can do the same in a more idiomatic and efficient way:
 ```js
-function save(buf, path) {
+function process(buf, path) {
+  // mad science here...
   fs.writeFileSync(path, buf)
 }
 
 fs.createReadStream('image.jpg')
-  .pipe(pipefy(save, 'new.jpg'))
+  .pipe(pipefy(process, 'new.jpg'))
 ```
 
 ## API
