@@ -2,8 +2,6 @@
 
 Simple and dependency-free node/io.js module to transform a function into a pipeable stream
 
-It basically wraps function and executes it asyncronously 
-
 ## Installation
 
 ```
