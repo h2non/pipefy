@@ -1,4 +1,4 @@
-# pipefy
+# pipefy [![Build Status](https://travis-ci.org/h2non/pipefy.svg?branch=master)](https://travis-ci.org/h2non/pipefy)
 
 Simple and dependency-free node/io.js module to transform a function into a pipeable stream
 
